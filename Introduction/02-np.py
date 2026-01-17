@@ -1,20 +1,17 @@
-import numpy as np               # Import NumPy for numerical operations
-from typing import Union         # For type hinting (float or int return type)
+import numpy as np  # Import NumPy library for numerical operations
 
-# Class to calculate average temperature
-class Temperature:
-    @staticmethod                # Decorator → means we don’t need to create an object to call this method
-    def temp() -> float:         # Function returns a float value
-        # Define a NumPy array of temperatures
-        temperatures = np.array([32.2, 34.6, 43.2, 39.0, 37.5])
-        
-        # Calculate and return the average temperature using NumPy's mean() function
-        return np.mean(temperatures)
+def temp_avg():
+    # Create a NumPy array of temperatures
+    tempreatures = np.array([32.6, 29.0, 18.7, 10.3, 42.4])
 
-# Entry point of the program
-if __name__ == "__main__":
-    # Call the static method directly without creating an instance
-    temp_avg: Union[float, int] = Temperature.temp()
+    # Calculate the average temperature using NumPy
+    average_temp = np.mean(tempreatures)
     
-    # Print the result formatted to 2 decimal places
-    print(f"The average temperature is {temp_avg:.2f}.")
+    # Return the calculated average temperature
+    return average_temp
+
+
+if __name__ == "__main__":
+    # Call the function and print the average temperature
+    # The value is rounded to 1 decimal place
+    print(f'The average tempreature is {round(temp_avg(), 1)}.')
